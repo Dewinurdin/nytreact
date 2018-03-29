@@ -9,6 +9,7 @@ const app = express();
 
 
 app.use(cors()); //accept request
+app.use(express.static("client/build"));
 
 app.get("/test", (req, res) => {
 	res.json({
