@@ -4,7 +4,7 @@ import axios from 'axios';
 class App extends React.Component {
   componentDidMount = () => {
 
-    axios.get("http://localhost:3000/test")
+    axios.get("http://localhost:8080/test")
     .then((response) => {
       console.log("Axios Response: ", response.data);
     })
