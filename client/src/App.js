@@ -1,25 +1,20 @@
-import React from 'react';
-import axios from 'axios';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./pages/Home";
+import Saved from "./pages/Saved";
+import NoMatch from "./pages/NoMatch";
+import Nav from "./components/Nav";
 
-class App extends React.Component {
-  console.log("React");
-  componentDidMount = () => {
-
-    axios.get("http://localhost:8080/test")
-    .then((response) => {
-      console.log("Axios Response: ", response.data);
-    })
-    .catch((err) => {
-      console.log("Axios Err: ", err.response);
-    })
-  };
-  render() {
-    return (
-      <div className="App">
-          <h1 className="App-title">Welcome to React</h1>
-      </div>
-    );
-  }
-}
+const App = () =>
+  <Router>
+    <div>
+      <Nav />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/saved" component={Saved} />
+        <Route component={NoMatch} />
+      </Switch>
+    </div>
+  </Router>;
 
 export default App;

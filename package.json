@@ -1,9 +1,14 @@
 {
-  "name": "mongo-scraper",
+  "name": "nyt-react",
   "version": "1.0.0",
-  "description": "A web app that lets users view and leave comments on the latest news by using Mongoose and Cheerio muscles to scrape news from another site. Dependencies: express, express-handlebars, mongoose, body-parser, cheerio and request",
+  "description": "Scraping NYT with Mongoose",
   "main": "server.js",
   "scripts": {
+    "server": "node server.js",
+    "client": "cd client && yarn start",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,15 +20,14 @@
   "bugs": {
     "url": "https://github.com/Dewinurdin/mongo-scraper/issues"
   },
-  "homepage": "https://github.com/Dewinurdin/mongo-scraper#readme",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.12.1"
+  },
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
-    "cheerio": "^1.0.0-rc.2",
-    "express": "^4.16.3",
-    "mongojs": "^2.5.0",
-    "mongoose": "^5.0.10",
-    "morgan": "^1.9.0",
-    "path": "^0.12.7",
-    "request": "^2.85.0"
+    "express": "^4.16.2",
+    "mongoose": "^4.13.3"
   }
 }
