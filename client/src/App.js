@@ -9,11 +9,11 @@ const App = () =>
   <Router>
     <div>
       <Nav />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/saved" component={Saved} />
-        <Route component={NoMatch} />
-      </Switch>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/saved" component={Saved} />
+          <Route component={NoMatch} />
+        </Switch>
     </div>
   </Router>;
 

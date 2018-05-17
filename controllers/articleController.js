@@ -9,6 +9,7 @@ module.exports = {
       .then(dbArticle => res.json(dbArticle))
       .catch(err => res.status(422).json(err));
   },
+  
   findById: function(req, res) {
     db.Article
       .findById(req.params.id)
