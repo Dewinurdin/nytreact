@@ -4,6 +4,8 @@
   "description": "Scraping NYT with Mongoose",
   "main": "server.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "server": "node server.js",
     "client": "cd client && yarn start",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
@@ -22,6 +24,7 @@
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
+    "gh-pages": "^1.2.0",
     "nodemon": "^1.12.1"
   },
   "dependencies": {
